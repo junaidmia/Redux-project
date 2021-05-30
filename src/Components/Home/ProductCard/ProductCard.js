@@ -1,6 +1,7 @@
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = (props) => {
 
@@ -29,6 +30,10 @@ const ProductCard = (props) => {
 
                             <div className="text-center">
                                 <a href="..." class="btn btn-warning">Buy now <FontAwesomeIcon icon={faCartPlus} /></a>
+                                <br />
+                                <Link to="/productDetails">
+                                    <button className="btn btn-warning mt-2">View Details</button>
+                                </Link>
                             </div>
 
                         </div>
