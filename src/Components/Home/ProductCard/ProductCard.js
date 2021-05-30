@@ -29,6 +29,8 @@ const ProductCard = (props) => {
 
                             <div className="text-center">
                                 <a href="..." class="btn btn-warning">Buy now <FontAwesomeIcon icon={faCartPlus} /></a>
+                                <br />
+                                <a href="..." class="btn btn-warning mt-2">View Details <FontAwesomeIcon icon={faCartPlus} /></a>
                             </div>
 
                         </div>
