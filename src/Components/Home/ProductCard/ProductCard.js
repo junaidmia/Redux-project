@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ProductCard = (props) => {
 
-    const {  image, price, title,} = props.productsInfo
+    const { id, image, price, title,} = props.productsInfo
 
     return (
         <div className="col-md-3 p-2">
@@ -30,9 +30,9 @@ const ProductCard = (props) => {
 
                             <div className="text-center">
                                 <a href="..." class="btn btn-warning">Buy now <FontAwesomeIcon icon={faCartPlus} /></a>
-                                <br />
-                                <Link to="/productDetails">
-                                    <button className="btn btn-warning mt-2">View Details</button>
+                                
+                                <Link to={"/productDetails/"+id}>
+                                    <button className="btn btn-warning ms-2">View Details</button>
                                 </Link>
                             </div>
 
