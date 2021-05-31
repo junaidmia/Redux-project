@@ -25,12 +25,12 @@ const ProductDetails = () => {
                     <p> <strong>Description:</strong> {productDetails.description} </p>
                     <p> <strong>Price :</strong> {productDetails.price} </p>
                     <p> <strong>Category :</strong> {productDetails.category} </p>
+                    <button className="btn btn-warning mt-4"> <FontAwesomeIcon icon={faCartPlus} /> Add to cart</button>
                 </div>
                 <div class="col-md-4"> 
                     <img style={{ height:'200px'}} src={productDetails.image} alt="" />
                 </div>
             </div>
-            <button className="btn btn-warning mt-4"> <FontAwesomeIcon icon={faCartPlus} /> Add to cart</button>
             </div>
         </div>
     );
