@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 
 const Products = () => {
