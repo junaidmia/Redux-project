@@ -3,25 +3,24 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from '../../ReduxStore/Action/CartAction';
 import { addProducts } from '../../ReduxStore/Action/ProductAction';
-
 import ShoppingCartLeft from '../ShoppingCartLeft/ShoppingCartLeft';
+import { useParams } from  'react-router-dom';
+import Navbar from '../Home/Navbar/Navbar';
 
 const ShoppingCart = () => {
 
+ const {id} =  useParams();
+
+ 
+
   const dispatch = useDispatch();
 
-  const { allProduct:products , allCart:carts}  =  useSelector(store=>store);
+  const { products }  =  useSelector(store=>store.allProduct);
+  const {allCart:carts} = useSelector(store=>store);
   
   useEffect(()=>{
-
-    fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-    .then(data=>dispatch(addProducts(data)))
     
-    products.length && dispatch(addItemToCart(products[0]));
-    
-   
-    
+    dispatch(addItemToCart(products.find(product=>product.id==id)))
       
   }, [])
 
@@ -31,6 +30,8 @@ const ShoppingCart = () => {
 
    
     return (
+      <div>
+        <Navbar></Navbar>
        <div className="container mt-3">
            <div className="row">
                <div className="col-md-8">
@@ -42,7 +43,7 @@ const ShoppingCart = () => {
                    </div>
                    <hr />
                    {
-                     products.length &&  products.map(cart=><ShoppingCartLeft key={Math.random()} cart={cart}/>)
+                     carts.length &&  carts.map(cart=><ShoppingCartLeft key={Math.random()} cart={cart}/>)
                    }
                </div>
                <div className="col-md-4">
@@ -50,6 +51,7 @@ const ShoppingCart = () => {
                   <hr />
                </div>
            </div>
+       </div>
        </div>
     );
 };

@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { editCartItem } from '../../ReduxStore/Action/CartAction';
 
 const ShoppingCartLeft = (props) => {
     const { image, title, price, quantity } = props.cart;
-    const [itemQuantity, setItemQuantity] = useState(quantity)
+
+    const dispatch = useDispatch();
 
     const quantityHandaler = (type) => {
-        type === "increase" ? setItemQuantity(itemQuantity+1) : setItemQuantity(itemQuantity+1);
+        if (type === "increment") {
+            dispatch(editCartItem('increment', props.cart));
+        }
+        else if (quantity > 1) {
+            dispatch(editCartItem('decrement', props.cart))
+        }
     }
     return (
         <>
@@ -18,11 +26,11 @@ const ShoppingCartLeft = (props) => {
                 </div>
                 <h5 className="col-3">BDT {price}</h5>
                 <div className="col-3 d-flex  align-items-center">
-                    <button className="btn btn-primary">-</button>
-                    <div className="p-3">{itemQuantity}</div>
-                    <button onClick={()=>{quantityHandaler("increase")}} className="btn btn-primary">+</button>
+                    <button onClick={() => { quantityHandaler("decrement") }} className="btn btn-primary">-</button>
+                    <div className="p-3">{quantity}</div>
+                    <button onClick={() => { quantityHandaler("increment") }} className="btn btn-primary">+</button>
                 </div>
-                <h5 className="col-3">BDT {itemQuantity * price}</h5>
+                <h5 className="col-3">BDT {quantity * price}</h5>
 
             </div>
             <hr />
