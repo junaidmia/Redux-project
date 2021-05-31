@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Home/Navbar/Navbar';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +25,9 @@ const ProductDetails = () => {
                     <p> <strong>Description:</strong> {productDetails.description} </p>
                     <p> <strong>Price :</strong> {productDetails.price} </p>
                     <p> <strong>Category :</strong> {productDetails.category} </p>
+                    <Link to="/addToCart">
                     <button className="btn btn-warning mt-4"> <FontAwesomeIcon icon={faCartPlus} /> Add to cart</button>
+                    </Link>
                 </div>
                 <div class="col-md-4"> 
                     <img style={{ height:'200px'}} src={productDetails.image} alt="" />

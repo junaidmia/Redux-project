@@ -29,7 +29,9 @@ const ProductCard = (props) => {
                             </div>
 
                             <div className="text-center">
-                                <a href="..." class="btn btn-warning">Buy now <FontAwesomeIcon icon={faCartPlus} /></a>
+                                <Link to={"/addToCart"}>
+                                    <button className="btn btn-warning ms-2"> <FontAwesomeIcon icon={faCartPlus} /> Add to Cart</button>
+                                </Link>
                                 
                                 <Link to={"/productDetails/"+id}>
                                     <button className="btn btn-warning ms-2">View Details</button>

@@ -32,7 +32,7 @@ const Navbar = () => {
                                 </li>
                             </Link>
 
-                            <Link style={{textDecoration: 'none'}} to="/">
+                            <Link style={{textDecoration: 'none'}} to="/addToCart">
                                 <li class="nav-item ms-3">
                                    <a class="nav-link active "> <span style={{ padding: '8px', backgroundColor: "#E8E6E6", borderRadius: '5px' }}>
                                     <FontAwesomeIcon icon={faShoppingCart} /> <span class="badge bg-danger"> 0 </span></span>
