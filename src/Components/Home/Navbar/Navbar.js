@@ -25,25 +25,18 @@ const Navbar = () => {
                                 </li>
                             </Link>
 
-                            
+                           
+                            <Link style={{textDecoration: 'none'}} to="/login">
+                                <li class="nav-item ms-3">
+                                    <a class="nav-link active">Log In</a>
+                                </li>
+                            </Link>
+
                             <Link style={{textDecoration: 'none'}} to="/">
                                 <li class="nav-item ms-3">
                                    <a class="nav-link active "> <span style={{ padding: '8px', backgroundColor: "#E8E6E6", borderRadius: '5px' }}>
                                     <FontAwesomeIcon icon={faShoppingCart} /> <span class="badge bg-danger"> 0 </span></span>
                                     </a>
-                                </li>
-                            </Link>
-
-                            <Link style={{textDecoration: 'none'}} to="/contact">
-                                <li class="nav-item ms-3">
-                                    <a class="nav-link active">Contact</a>
-                                </li>
-                            </Link>
-
-                           
-                            <Link style={{textDecoration: 'none'}} to="/login">
-                                <li class="nav-item ms-3">
-                                    <a class="nav-link active">Log In</a>
                                 </li>
                             </Link>
                         </ul>
