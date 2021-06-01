@@ -6,6 +6,7 @@ import { addProducts } from '../../ReduxStore/Action/ProductAction';
 import ShoppingCartLeft from '../ShoppingCartLeft/ShoppingCartLeft';
 import { useParams } from  'react-router-dom';
 import Navbar from '../Home/Navbar/Navbar';
+import ShoppingCartRight from '../ShoppingCartRight/ShoppingCartRight';
 
 const ShoppingCart = () => {
 
@@ -34,21 +35,23 @@ const ShoppingCart = () => {
         <Navbar></Navbar>
        <div className="container mt-3">
            <div className="row">
-               <div className="col-md-8">
+               <div className="col-md-9">
                    <div className="d-flex justify-content-between">
-                       <div className="col-4">Item</div>
+                       <div className="col-3">Item</div>
                        <div className="col-3">Price</div>
                        <div className="col-3">Qty</div>
                        <div className="col-2">Subtotal</div>
+                       <div className="col-1"></div>
                    </div>
                    <hr />
                    {
                      carts.length &&  carts.map(cart=><ShoppingCartLeft key={Math.random()} cart={cart}/>)
                    }
                </div>
-               <div className="col-md-4">
+               <div className="col-md-3">
                   <p className="h5">Summary</p>
                   <hr />
+                  <ShoppingCartRight carts = {carts}/>
                </div>
            </div>
        </div>

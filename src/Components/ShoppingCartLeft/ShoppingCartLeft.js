@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { editCartItem } from '../../ReduxStore/Action/CartAction';
+import { deleteCartItem, editCartItem } from '../../ReduxStore/Action/CartAction';
 
 const ShoppingCartLeft = (props) => {
-    const { image, title, price, quantity } = props.cart;
+    const { id, image, title, price, quantity } = props.cart;
 
     const dispatch = useDispatch();
 
@@ -15,6 +15,14 @@ const ShoppingCartLeft = (props) => {
             dispatch(editCartItem('decrement', props.cart))
         }
     }
+
+
+    // delete a cart
+    const deleteCartHandaler = (id)=>{
+        
+        dispatch(deleteCartItem(id))
+    }
+
     return (
         <>
             <div className="d-flex p-3">
@@ -30,8 +38,10 @@ const ShoppingCartLeft = (props) => {
                     <div className="p-3">{quantity}</div>
                     <button onClick={() => { quantityHandaler("increment") }} className="btn btn-primary">+</button>
                 </div>
-                <h5 className="col-3">BDT {quantity * price}</h5>
-
+                <h5 className="col-2">BDT {Math.round(quantity * price)}</h5>
+                <div className=" d-flex align-items-center col-1">
+                    <button onClick={()=>deleteCartHandaler(id)} className="p-0 m-0 btn">X</button>
+                </div>
             </div>
             <hr />
         </>
