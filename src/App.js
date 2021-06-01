@@ -8,6 +8,7 @@ import { createContext, useState  } from "react";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AddToCart from "./Components/AddToCart/AddToCart";
 import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
+import Checkout from "./Components/Checkout/Checkout";
 
 export const UserContext = createContext();
 
@@ -32,6 +33,10 @@ function App() {
 
         <Route path="/login">
           <Login></Login>
+        </Route>
+
+        <Route path="/checkout">
+          <Checkout></Checkout>
         </Route>
 
         <PrivateRoute path="/addToCart/:id">

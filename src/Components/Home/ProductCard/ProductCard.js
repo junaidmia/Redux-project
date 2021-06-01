@@ -30,11 +30,11 @@ const ProductCard = (props) => {
 
                             <div className="text-center">
                                 <Link to={"/addToCart/"+id}>
-                                    <button className="btn btn-warning ms-2"> <FontAwesomeIcon icon={faCartPlus} /> Add to Cart</button>
+                                    <button className="btn btn-warning m-2"> <FontAwesomeIcon icon={faCartPlus} /> Add to Cart</button>
                                 </Link>
                                 
                                 <Link to={"/productDetails/"+id}>
-                                    <button className="btn btn-warning ms-2">View Details</button>
+                                    <button className="btn btn-warning m-2">View Details</button>
                                 </Link>
                             </div>
 
